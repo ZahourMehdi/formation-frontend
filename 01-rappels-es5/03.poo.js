@@ -63,8 +63,12 @@ function Client (numeroClient,nom, prenom, pseudo){
     Personne.call(this, nom, prenom,pseudo )
     this.numeroClient = numeroClient;
     this.getInfos = function(){
-        return  "Numero Client : "+this.numeroClient  + " ,Nom : " + this.nom + " ,Prenom : " + this.prenom;
-    }
+        return {
+            numeroClient : this.numeroClient,
+            nom : this.nom,
+            prenom :  this.prenom
+        }
+    };
 }
 
 var steve = new Client("A01","LUCAS","Steve","steve44");
